@@ -1,16 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#E91E63"
-    tools:context=".MainActivity"
-    android:orientation="vertical">
+    tools:context=".MainActivity">
 
     <TextView
         android:id="@+id/textView"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
         android:fontFamily="serif-monospace"
@@ -19,201 +18,280 @@
         android:textAppearance="@style/TextAppearance.AppCompat.Display4"
         android:textColor="#FFE503"
         android:textSize="36sp"
-        android:textStyle="bold" />
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="1"
-        android:orientation="horizontal">
+        android:id="@+id/playListLayout"
+        android:layout_width="402dp"
+        android:layout_height="77dp"
+        android:layout_marginTop="24dp"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView">
 
         <ImageView
-            android:id="@+id/attacked"
+            android:id="@+id/playList1"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_margin="8dp"
             android:layout_weight="1"
             android:adjustViewBounds="true"
-            android:background="#FFE503"
+            android:background="@android:color/darker_gray"
             android:cropToPadding="true"
+            android:onClick="selectSlot"
             android:padding="8dp"
             android:scaleType="centerCrop"
             android:soundEffectsEnabled="false"
-            android:tag="attacked"
-            app:srcCompat="@drawable/attacked" />
+            android:tag="playList1"
+            app:srcCompat="@android:color/darker_gray" />
 
         <ImageView
-            android:id="@+id/choices"
+            android:id="@+id/playList2"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_margin="8dp"
             android:layout_weight="1"
             android:adjustViewBounds="true"
-            android:background="#FFE503"
+            android:background="@android:color/darker_gray"
             android:cropToPadding="true"
+            android:onClick="selectSlot"
             android:padding="8dp"
             android:scaleType="centerCrop"
             android:soundEffectsEnabled="false"
-            android:tag="choices"
-            app:srcCompat="@drawable/tati" />
+            android:tag="playList2"
+            app:srcCompat="@android:color/darker_gray" />
 
         <ImageView
-            android:id="@+id/tone"
+            android:id="@+id/playList3"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_margin="8dp"
             android:layout_weight="1"
             android:adjustViewBounds="true"
-            android:background="#FFE503"
+            android:background="@android:color/darker_gray"
             android:cropToPadding="true"
+            android:onClick="selectSlot"
             android:padding="8dp"
             android:scaleType="centerCrop"
             android:soundEffectsEnabled="false"
-            android:tag="tone"
-            app:srcCompat="@drawable/tone" />
+            android:tag="playList3"
+            app:srcCompat="@android:color/darker_gray" />
+
+        <ImageView
+            android:id="@+id/playList4"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="8dp"
+            android:layout_weight="1"
+            android:adjustViewBounds="true"
+            android:background="@android:color/darker_gray"
+            android:cropToPadding="true"
+            android:onClick="selectSlot"
+            android:padding="8dp"
+            android:scaleType="centerCrop"
+            android:soundEffectsEnabled="false"
+            android:tag="playList4"
+            app:srcCompat="@android:color/darker_gray" />
+
+        <ImageView
+            android:id="@+id/playList5"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="8dp"
+            android:layout_weight="1"
+            android:adjustViewBounds="true"
+            android:background="@android:color/darker_gray"
+            android:cropToPadding="true"
+            android:onClick="selectSlot"
+            android:padding="8dp"
+            android:scaleType="centerCrop"
+            android:soundEffectsEnabled="false"
+            android:tag="playList5"
+            app:srcCompat="@android:color/darker_gray" />
+
     </LinearLayout>
 
-    <LinearLayout
+    <Button
+        android:id="@+id/playPlaylist"
         android:layout_width="match_parent"
-        android:layout_height="0dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_vertical"
+        android:layout_marginTop="12dp"
         android:layout_weight="1"
-        android:orientation="horizontal">
+        android:onClick="PlaySounds"
+        android:text="Untuck"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/playListLayout">
 
-        <ImageView
-            android:id="@+id/successfully"
+
+    </Button>
+
+    <ScrollView
+        android:id="@+id/Scrollview"
+        android:layout_width="400dp"
+        android:layout_height="427dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/playPlaylist">
+
+        <androidx.gridlayout.widget.GridLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_margin="8dp"
-            android:layout_weight="1"
-            android:adjustViewBounds="true"
-            android:background="#FFE503"
-            android:cropToPadding="true"
-            android:padding="8dp"
-            android:scaleType="centerCrop"
-            android:soundEffectsEnabled="false"
-            android:tag="successfully"
-            app:srcCompat="@drawable/successfully" />
-
-        <ImageView
-            android:id="@+id/bestfriend"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_margin="8dp"
-            android:layout_weight="1"
-            android:adjustViewBounds="true"
-            android:background="#FFE503"
-            android:cropToPadding="true"
-            android:padding="8dp"
-            android:scaleType="centerCrop"
-            android:soundEffectsEnabled="false"
-            android:tag="bestfriend"
-            app:srcCompat="@drawable/lashawn" />
-
-        <ImageView
-            android:id="@+id/dontdothat"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_margin="8dp"
-            android:layout_weight="1"
-            android:adjustViewBounds="true"
-            android:background="#FFE503"
-            android:cropToPadding="true"
-            android:padding="8dp"
-            android:scaleType="centerCrop"
-            android:soundEffectsEnabled="false"
-            android:tag="dontdothat"
-            app:srcCompat="@drawable/adore" />
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="1"
-        android:orientation="horizontal">
-
-        <ImageView
-            android:id="@+id/makeup"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_margin="8dp"
-            android:layout_weight="1"
-            android:adjustViewBounds="true"
-            android:background="#FFE503"
-            android:cropToPadding="true"
-            android:padding="8dp"
-            android:scaleType="centerCrop"
-            android:soundEffectsEnabled="false"
-            android:tag="makeup"
-            app:srcCompat="@drawable/jiggly" />
-
-        <ImageView
-            android:id="@+id/satan"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_margin="8dp"
-            android:layout_weight="1"
-            android:adjustViewBounds="true"
-            android:background="#FFE503"
-            android:cropToPadding="true"
-            android:padding="8dp"
-            android:scaleType="centerCrop"
-            android:soundEffectsEnabled="false"
-            android:tag="satan"
-            app:srcCompat="@drawable/bianca" />
-
-        <ImageView
-            android:id="@+id/showgirl"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_margin="8dp"
-            android:layout_weight="1"
-            android:adjustViewBounds="true"
-            android:background="#FFE503"
-            android:cropToPadding="true"
-            android:padding="8dp"
-            android:scaleType="centerCrop"
-            android:soundEffectsEnabled="false"
-            android:tag="showgirl"
-            app:srcCompat="@drawable/partycity" />
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="1"
-        android:orientation="horizontal">
-
-        <ImageView
-            android:id="@+id/imageView"
-            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_margin="8dp"
-            android:layout_weight="1"
-            android:visibility="invisible"
-            tools:srcCompat="@tools:sample/backgrounds/scenic" />
+            app:columnCount="3">
 
-        <ImageView
-            android:id="@+id/shade"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_margin="8dp"
-            android:layout_weight="1"
-            android:background="#FFE503"
-            android:cropToPadding="true"
-            android:padding="8dp"
-            android:scaleType="centerCrop"
-            android:soundEffectsEnabled="false"
-            android:tag="shade"
-            app:srcCompat="@drawable/snake" />
+            <ImageView
+                android:id="@+id/attacked"
+                android:layout_width="115dp"
+                android:layout_height="115dp"
+                android:layout_margin="8dp"
+                android:adjustViewBounds="true"
+                android:background="#FFE503"
+                android:cropToPadding="true"
+                android:padding="8dp"
+                android:scaleType="centerCrop"
+                android:soundEffectsEnabled="false"
+                android:tag="attacked"
+                app:srcCompat="@drawable/attacked" />
 
-        <ImageView
-            android:id="@+id/imageView2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_margin="8dp"
-            android:layout_weight="1"
-            android:visibility="invisible"
-            tools:srcCompat="@tools:sample/backgrounds/scenic" />
-    </LinearLayout>
+            <ImageView
+                android:id="@+id/tone"
+                android:layout_width="115dp"
+                android:layout_height="115dp"
+                android:layout_margin="8dp"
+                android:adjustViewBounds="true"
+                android:background="#FFE503"
+                android:cropToPadding="true"
+                android:padding="8dp"
+                android:scaleType="centerCrop"
+                android:soundEffectsEnabled="false"
+                android:tag="tone"
+                app:srcCompat="@drawable/tone" />
 
-</LinearLayout>
+            <ImageView
+                android:id="@+id/choices"
+                android:layout_width="115dp"
+                android:layout_height="115dp"
+                android:layout_margin="8dp"
+                android:adjustViewBounds="true"
+                android:background="#FFE503"
+                android:cropToPadding="true"
+                android:padding="8dp"
+                android:scaleType="centerCrop"
+                android:soundEffectsEnabled="false"
+                android:tag="choices"
+                app:srcCompat="@drawable/tati" />
+
+            <ImageView
+                android:id="@+id/successfully"
+                android:layout_width="115dp"
+                android:layout_height="115dp"
+                android:layout_margin="8dp"
+                android:adjustViewBounds="true"
+                android:background="#FFE503"
+                android:cropToPadding="true"
+                android:padding="8dp"
+                android:scaleType="centerCrop"
+                android:soundEffectsEnabled="false"
+                android:tag="successfully"
+                app:srcCompat="@drawable/successfully" />
+
+            <ImageView
+                android:id="@+id/bestfriend"
+                android:layout_width="115dp"
+                android:layout_height="115dp"
+                android:layout_margin="8dp"
+                android:adjustViewBounds="true"
+                android:background="#FFE503"
+                android:cropToPadding="true"
+                android:padding="8dp"
+                android:scaleType="centerCrop"
+                android:soundEffectsEnabled="false"
+                android:tag="bestfriend"
+                app:srcCompat="@drawable/lashawn" />
+
+            <ImageView
+                android:id="@+id/dontdothat"
+                android:layout_width="115dp"
+                android:layout_height="115dp"
+                android:layout_margin="8dp"
+                android:adjustViewBounds="true"
+                android:background="#FFE503"
+                android:cropToPadding="true"
+                android:padding="8dp"
+                android:scaleType="centerCrop"
+                android:scrollX="10dp"
+                android:soundEffectsEnabled="false"
+                android:tag="dontdothat"
+                app:srcCompat="@drawable/adore" />
+
+            <ImageView
+                android:id="@+id/makeup"
+                android:layout_width="115dp"
+                android:layout_height="115dp"
+                android:layout_margin="8dp"
+                android:adjustViewBounds="true"
+                android:background="#FFE503"
+                android:cropToPadding="true"
+                android:padding="8dp"
+                android:scaleType="centerCrop"
+                android:scrollY="-9dp"
+                android:soundEffectsEnabled="false"
+                android:tag="makeup"
+                app:srcCompat="@drawable/jiggly" />
+
+            <ImageView
+                android:id="@+id/showgirl"
+                android:layout_width="115dp"
+                android:layout_height="115dp"
+                android:layout_margin="8dp"
+                android:adjustViewBounds="true"
+                android:background="#FFE503"
+                android:cropToPadding="true"
+                android:padding="8dp"
+                android:scaleType="centerCrop"
+                android:soundEffectsEnabled="false"
+                android:tag="showgirl"
+                app:srcCompat="@drawable/partycity" />
+
+            <ImageView
+                android:id="@+id/satan"
+                android:layout_width="115dp"
+                android:layout_height="115dp"
+                android:layout_margin="8dp"
+                android:adjustViewBounds="true"
+                android:background="#FFE503"
+                android:cropToPadding="true"
+                android:padding="8dp"
+                android:scaleType="centerCrop"
+                android:soundEffectsEnabled="false"
+                android:tag="satan"
+                app:srcCompat="@drawable/bianca" />
+
+            <ImageView
+                android:id="@+id/shade"
+                android:layout_width="115dp"
+                android:layout_height="115dp"
+                android:layout_margin="8dp"
+                android:background="#FFE503"
+                android:cropToPadding="true"
+                android:padding="8dp"
+                android:scaleType="centerCrop"
+                android:soundEffectsEnabled="false"
+                android:tag="shade"
+                app:srcCompat="@drawable/snake" />
+
+        </androidx.gridlayout.widget.GridLayout>
+    </ScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
