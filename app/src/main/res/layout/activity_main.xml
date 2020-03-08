@@ -122,8 +122,11 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="center_vertical"
+        android:layout_marginStart="16dp"
         android:layout_marginTop="12dp"
+        android:layout_marginEnd="16dp"
         android:layout_weight="1"
+        android:background="#FBC02D"
         android:onClick="PlaySounds"
         android:text="Untuck"
         android:textSize="24sp"
@@ -131,10 +134,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/playListLayout">
-
-
-    </Button>
+        app:layout_constraintTop_toBottomOf="@+id/playListLayout" />
 
     <ScrollView
         android:id="@+id/Scrollview"
