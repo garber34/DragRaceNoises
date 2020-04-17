@@ -1,39 +1,35 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#E91E63"
-    tools:context=".MainActivity">
+    tools:context=".MainActivity"
+    android:orientation="vertical">
 
     <TextView
         android:id="@+id/textView"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
         android:layout_gravity="center_horizontal"
-        android:fontFamily="serif-monospace"
-        android:gravity="center_horizontal"
+        android:layout_weight="1"
+        android:fontFamily="@font/alba"
+        android:gravity="center"
         android:text="Quotes from Queens"
-        android:textAppearance="@style/TextAppearance.AppCompat.Display4"
+        android:textAlignment="center"
         android:textColor="#FFE503"
         android:textSize="36sp"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:textStyle="bold" />
 
     <LinearLayout
         android:id="@+id/playListLayout"
-        android:layout_width="402dp"
-        android:layout_height="77dp"
-        android:layout_marginTop="24dp"
-        android:orientation="horizontal"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView">
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="9dp"
+        android:layout_weight="1"
+        android:orientation="horizontal">
 
         <ImageView
             android:id="@+id/playList1"
@@ -119,40 +115,37 @@
 
     <Button
         android:id="@+id/playPlaylist"
+        style="@android:style/Widget.Button.Inset"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="0dp"
         android:layout_gravity="center_vertical"
         android:layout_marginStart="16dp"
-        android:layout_marginTop="12dp"
+        android:layout_marginTop="8dp"
         android:layout_marginEnd="16dp"
-        android:layout_weight="1"
+        android:layout_marginBottom="8dp"
+        android:layout_weight=".5"
         android:background="#FBC02D"
+        android:fontFamily="@font/alba"
         android:onClick="PlaySounds"
         android:text="Untuck"
-        android:textSize="24sp"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/playListLayout" />
+        android:textSize="30sp"
+        android:textStyle="bold" />
 
     <ScrollView
         android:id="@+id/Scrollview"
-        android:layout_width="400dp"
-        android:layout_height="427dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/playPlaylist">
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="4">
 
         <androidx.gridlayout.widget.GridLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
             app:columnCount="3">
 
             <ImageView
                 android:id="@+id/attacked"
-                android:layout_width="115dp"
+                android:layout_width="0dp"
                 android:layout_height="115dp"
                 android:layout_margin="8dp"
                 android:adjustViewBounds="true"
@@ -162,11 +155,28 @@
                 android:scaleType="centerCrop"
                 android:soundEffectsEnabled="false"
                 android:tag="attacked"
+                app:layout_columnWeight="1"
+                app:layout_rowWeight="1"
                 app:srcCompat="@drawable/attacked" />
 
             <ImageView
+                android:id="@+id/immaworryaboutheidi"
+                android:layout_width="0dp"
+                android:layout_height="115dp"
+                android:layout_margin="8dp"
+                android:background="#FFE503"
+                android:cropToPadding="true"
+                android:padding="8dp"
+                android:scaleType="centerCrop"
+                android:soundEffectsEnabled="false"
+                android:tag="immaworryaboutheidi"
+                app:layout_columnWeight="1"
+                app:layout_rowWeight="1"
+                app:srcCompat="@drawable/immaworryaboutheidi" />
+
+            <ImageView
                 android:id="@+id/tone"
-                android:layout_width="115dp"
+                android:layout_width="0dp"
                 android:layout_height="115dp"
                 android:layout_margin="8dp"
                 android:adjustViewBounds="true"
@@ -176,11 +186,13 @@
                 android:scaleType="centerCrop"
                 android:soundEffectsEnabled="false"
                 android:tag="tone"
+                app:layout_columnWeight="1"
+                app:layout_rowWeight="1"
                 app:srcCompat="@drawable/tone" />
 
             <ImageView
                 android:id="@+id/choices"
-                android:layout_width="115dp"
+                android:layout_width="0dp"
                 android:layout_height="115dp"
                 android:layout_margin="8dp"
                 android:adjustViewBounds="true"
@@ -190,11 +202,28 @@
                 android:scaleType="centerCrop"
                 android:soundEffectsEnabled="false"
                 android:tag="choices"
+                app:layout_columnWeight="1"
+                app:layout_rowWeight="1"
                 app:srcCompat="@drawable/tati" />
 
             <ImageView
+                android:id="@+id/colleague"
+                android:layout_width="0dp"
+                android:layout_height="115dp"
+                android:layout_margin="8dp"
+                android:background="#FFE503"
+                android:cropToPadding="true"
+                android:padding="8dp"
+                android:scaleType="centerCrop"
+                android:soundEffectsEnabled="false"
+                android:tag="coworker_race"
+                app:layout_columnWeight="1"
+                app:layout_rowWeight="1"
+                app:srcCompat="@drawable/colleaguerace" />
+
+            <ImageView
                 android:id="@+id/successfully"
-                android:layout_width="115dp"
+                android:layout_width="0dp"
                 android:layout_height="115dp"
                 android:layout_margin="8dp"
                 android:adjustViewBounds="true"
@@ -204,11 +233,13 @@
                 android:scaleType="centerCrop"
                 android:soundEffectsEnabled="false"
                 android:tag="successfully"
+                app:layout_columnWeight="1"
+                app:layout_rowWeight="1"
                 app:srcCompat="@drawable/successfully" />
 
             <ImageView
                 android:id="@+id/bestfriend"
-                android:layout_width="115dp"
+                android:layout_width="0dp"
                 android:layout_height="115dp"
                 android:layout_margin="8dp"
                 android:adjustViewBounds="true"
@@ -218,11 +249,13 @@
                 android:scaleType="centerCrop"
                 android:soundEffectsEnabled="false"
                 android:tag="bestfriend"
+                app:layout_columnWeight="1"
+                app:layout_rowWeight="1"
                 app:srcCompat="@drawable/lashawn" />
 
             <ImageView
                 android:id="@+id/dontdothat"
-                android:layout_width="115dp"
+                android:layout_width="0dp"
                 android:layout_height="115dp"
                 android:layout_margin="8dp"
                 android:adjustViewBounds="true"
@@ -233,11 +266,28 @@
                 android:scrollX="10dp"
                 android:soundEffectsEnabled="false"
                 android:tag="dontdothat"
+                app:layout_columnWeight="1"
+                app:layout_rowWeight="1"
                 app:srcCompat="@drawable/adore" />
 
             <ImageView
+                android:id="@+id/itdoesntmatter"
+                android:layout_width="0dp"
+                android:layout_height="115dp"
+                android:layout_margin="8dp"
+                android:background="#FFE503"
+                android:cropToPadding="true"
+                android:padding="8dp"
+                android:scaleType="centerCrop"
+                android:soundEffectsEnabled="false"
+                android:tag="itdoesntmatter"
+                app:layout_columnWeight="1"
+                app:layout_rowWeight="1"
+                app:srcCompat="@drawable/itdoesntmatter" />
+
+            <ImageView
                 android:id="@+id/makeup"
-                android:layout_width="115dp"
+                android:layout_width="0dp"
                 android:layout_height="115dp"
                 android:layout_margin="8dp"
                 android:adjustViewBounds="true"
@@ -248,11 +298,13 @@
                 android:scrollY="-9dp"
                 android:soundEffectsEnabled="false"
                 android:tag="makeup"
+                app:layout_columnWeight="1"
+                app:layout_rowWeight="1"
                 app:srcCompat="@drawable/jiggly" />
 
             <ImageView
                 android:id="@+id/showgirl"
-                android:layout_width="115dp"
+                android:layout_width="0dp"
                 android:layout_height="115dp"
                 android:layout_margin="8dp"
                 android:adjustViewBounds="true"
@@ -262,11 +314,13 @@
                 android:scaleType="centerCrop"
                 android:soundEffectsEnabled="false"
                 android:tag="showgirl"
+                app:layout_columnWeight="1"
+                app:layout_rowWeight="1"
                 app:srcCompat="@drawable/partycity" />
 
             <ImageView
                 android:id="@+id/satan"
-                android:layout_width="115dp"
+                android:layout_width="0dp"
                 android:layout_height="115dp"
                 android:layout_margin="8dp"
                 android:adjustViewBounds="true"
@@ -276,11 +330,13 @@
                 android:scaleType="centerCrop"
                 android:soundEffectsEnabled="false"
                 android:tag="satan"
+                app:layout_columnWeight="1"
+                app:layout_rowWeight="1"
                 app:srcCompat="@drawable/bianca" />
 
             <ImageView
                 android:id="@+id/shade"
-                android:layout_width="115dp"
+                android:layout_width="0dp"
                 android:layout_height="115dp"
                 android:layout_margin="8dp"
                 android:background="#FFE503"
@@ -289,9 +345,11 @@
                 android:scaleType="centerCrop"
                 android:soundEffectsEnabled="false"
                 android:tag="shade"
+                app:layout_columnWeight="1"
+                app:layout_rowWeight="1"
                 app:srcCompat="@drawable/snake" />
 
         </androidx.gridlayout.widget.GridLayout>
     </ScrollView>
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+</LinearLayout>

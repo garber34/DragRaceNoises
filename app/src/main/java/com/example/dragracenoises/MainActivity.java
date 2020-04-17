@@ -23,6 +23,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
   ImageView makeUp;
   ImageView tone;
   ImageView shade;
+  ImageView immaWorryAboutHeidi;
+  ImageView itDoesntMatter;
+  ImageView colleague;
 
   //instantiate playlist UI and track elements
   Button bttnPlay;
@@ -50,6 +53,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         makeUp=findViewById(R.id.makeup);
         tone=findViewById(R.id.tone);
         shade=findViewById(R.id.shade);
+        immaWorryAboutHeidi=findViewById(R.id.immaworryaboutheidi);
+        itDoesntMatter=findViewById(R.id.itdoesntmatter);
+        colleague=findViewById(R.id.colleague);
         satan.setOnClickListener(MainActivity.this);
         showGirl.setOnClickListener(MainActivity.this);
         successfully.setOnClickListener(MainActivity.this);
@@ -60,6 +66,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         makeUp.setOnClickListener(this);
         tone.setOnClickListener(this);
         shade.setOnClickListener(this);
+        immaWorryAboutHeidi.setOnClickListener(this);
+        itDoesntMatter.setOnClickListener(this);
+        colleague.setOnClickListener(this);
 
 
         bttnPlay=findViewById(R.id.playPlaylist);
